@@ -1,0 +1,285 @@
+#SYMBOLS
+Index	Identifier	Type	Flag	Data	Size	RefCount
+0	__signed_stack_001explore	6	1	0	4	4
+1	__CLSRMutex1	9	0	4	4	2
+2	__CLSCSMutex1	9	0	8	4	2
+3	__CLSWMutex1	9	0	12	4	2
+4	__DU0SetSensorLowspeed_inline_explore	5	1	16	4	2
+5	__D0reverse	6	1	20	4	6
+6	__D0explore	6	1	24	4	12
+7	__RLSBmutex1	9	0	28	4	2
+8	__D0SetSensorLowspeed_inline_explore	6	1	32	4	3
+9	__ResetSensorMutex	9	0	36	4	4
+10	__OnRevMutex	9	0	40	4	4
+11	__SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_explore	1	1	44	1	2
+12	__SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLowspeed_inline_explore	1	1	45	1	2
+13	____initialize_global_data_return	1	1	46	1	3
+14	__constVal2	2	0	47	1	2
+15	__ResetSensor_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_explore	1	1	48	1	2
+16	__zfexplore	1	1	49	1	6
+17	__zfSetSensorLowspeed_inline_explore	1	1	50	1	2
+18	__constVal63	2	0	51	1	7
+19	__SetSensorTouch_7qG2_port_7qG2_000_inline_explore	1	1	52	1	4
+20	__SetSensorLowspeed_7qG2_port_7qG2_000_inline_explore	1	1	53	1	4
+21	__SetSensorLowspeed_7qG2_bIsPowered_7qG2_000_inline_explore	1	1	54	1	2
+22	__SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLowspeed_inline_explore	1	1	55	1	2
+23	__SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_explore	1	1	56	1	2
+24	__constVal96	2	0	57	1	7
+25	__constVal3	2	0	58	1	7
+26	__constVal0	2	1	59	1	26
+27	__constVal1	2	0	60	1	5
+28	__ResetSensorTmp	1	1	61	1	2
+29	____ResetSensorSubroutine_return	1	1	62	1	4
+30	__ResetSensorPort	1	1	63	1	4
+31	__RLSBytesCount1	1	1	64	1	7
+32	__RLSBIterations1	1	1	65	1	4
+33	__OnRev_Tmp	2	1	66	1	4
+34	____ReadLSBytes1_return	1	1	67	1	3
+35	__constVal32	2	0	68	1	22
+36	__RLSBResult1	2	1	69	1	7
+37	__CLSRArgs1	8	0	4	12	5
+38	__CLSRArgs1.Result	2	1	72	1	5
+39	__CLSRArgs1.Port	1	1	73	1	5
+40	__CLSRArgs1.Buffer	7	0	74	4	5
+41	__CLSRArgs1.Buffer.Buffer_type	1	0	0	1	0
+42	__CLSRArgs1.BufferLen	1	1	76	1	5
+43	__CLSWArgs1	8	0	4	12	5
+44	__CLSWArgs1.Result	2	1	80	1	5
+45	__CLSWArgs1.Port	1	1	81	1	5
+46	__CLSWArgs1.Buffer	7	0	82	4	5
+47	__CLSWArgs1.Buffer.Buffer_type	1	0	0	1	0
+48	__CLSWArgs1.ReturnLen	1	1	84	1	5
+49	__CLSCSArgs1	8	0	3	4	4
+50	__CLSCSArgs1.Result	2	1	88	1	4
+51	__CLSCSArgs1.Port	1	1	89	1	4
+52	__CLSCSArgs1.BytesReady	1	1	90	1	4
+53	__RLSReadBuf1	7	0	92	4	8
+54	__RLSReadBuf1.__RLSReadBuf1_type	1	0	0	1	0
+55	__OUT_ABC	7	0	94	4	4
+56	__OUT_ABC.__OUT_ABC_type	1	0	0	1	0
+57	__RLSBbufLSWrite1	7	0	96	4	1
+58	__RLSBbufLSWrite1.__RLSBbufLSWrite1_type	1	0	0	1	0
+59	__RLSLastGoodRead1	7	0	98	4	2
+60	__RLSLastGoodRead1.__RLSLastGoodRead1_type	1	0	0	1	0
+#SOURCES
+Clump	Line	PC	Source
+0	33	0	#line 33 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+0	34	0		subcall __initialize_global_data, ____initialize_global_data_return
+0	33	2	#line 33 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+0	34	2	#line 34 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+0	34	2	#line 34 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+0	35	2		exit 0, 1
+1	4885	0		setin __constVal1, __ResetSensorPort, 5
+1	4887	4		getin __ResetSensorTmp, __ResetSensorPort, 5
+1	4888	8		brtst 5, __SensorStillInvalid, __ResetSensorTmp
+1	4889	11		subret ____ResetSensorSubroutine_return
+2	5710	0	#pragma macro 25
+2	5710	0		acquire __CLSWMutex1
+2	5710	1		set __CLSWArgs1.Port, 1
+2	5710	4		mov __CLSWArgs1.ReturnLen, __RLSBytesCount1
+2	5710	6		mov __CLSWArgs1.Buffer, __RLSReadBuf1
+2	5710	8		syscall 21, __CLSWArgs1
+2	5710	11		mov __RLSBResult1, __CLSWArgs1.Result
+2	5710	13		release __CLSWMutex1
+2	5710	14	#line 5710 "NXTDefs.h"
+2	5711	14		brtst 4, __RLSBReturn1, __RLSBytesCount1
+2	5712	17		arrinit __RLSReadBuf1, __constVal0, __RLSBytesCount1
+2	5713	21		brtst 5, __RLSBError1, __RLSBResult1
+2	5714	24		set __RLSBIterations1, 4
+2	5716	27	#pragma macro 23
+2	5716	27		acquire __CLSCSMutex1
+2	5716	28		set __CLSCSArgs1.Port, 1
+2	5716	31		syscall 23, __CLSCSArgs1
+2	5716	34		mov __RLSBytesCount1, __CLSCSArgs1.BytesReady
+2	5716	36		mov __RLSBResult1, __CLSCSArgs1.Result
+2	5716	38		release __CLSCSMutex1
+2	5716	39	#line 5716 "NXTDefs.h"
+2	5717	39		sub __RLSBIterations1, __RLSBIterations1, __constVal1
+2	5718	43		brtst 2, __RLSBError1, __RLSBIterations1
+2	5719	46		brtst 0, __RLSBError1, __RLSBResult1
+2	5720	49		brtst 4, __RLSBReadyToRead1, __RLSBResult1
+2	5722	52		wait 15
+2	5723	54		jmp __RLSBDoCheckStatus1
+2	5726	56	#pragma macro 25
+2	5726	56		acquire __CLSRMutex1
+2	5726	57		set __CLSRArgs1.Port, 1
+2	5726	60		mov __CLSRArgs1.BufferLen, __RLSBytesCount1
+2	5726	62		syscall 22, __CLSRArgs1
+2	5726	65		mov __RLSReadBuf1, __CLSRArgs1.Buffer
+2	5726	67		mov __RLSBResult1, __CLSRArgs1.Result
+2	5726	69		release __CLSRMutex1
+2	5726	70	#line 5726 "NXTDefs.h"
+2	5727	70		brtst 5, __RLSBError1, __RLSBResult1
+2	5728	73		mov __RLSLastGoodRead1, __RLSReadBuf1
+2	5729	75		jmp __RLSBDone1
+2	5731	77		mov __RLSReadBuf1, __RLSLastGoodRead1
+2	5733	79		arrsize __RLSBytesCount1, __RLSReadBuf1
+2	5735	82		subret ____ReadLSBytes1_return
+3	5	0	#line 5 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	6	0	#pragma macro 7
+3	6	0		setout __OUT_ABC, 2, __constVal0, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+3	6016	23	#line 6016 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	5	23	#line 5 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	5	23	#line 5 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	6	23		set __D0reverse, 50
+3	6	26	#line 6 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	7	26	#pragma macro 10
+3	7	26		acquire __OnRevMutex
+3	7	27		neg __OnRev_Tmp, __D0reverse
+3	7	30		setout __OUT_ABC, 2, __OnRev_Tmp, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+3	7	53		release __OnRevMutex
+3	6023	54	#line 6023 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	6	54	#line 6 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	7	54	#line 7 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	8	54	#pragma macro 7
+3	8	54		setout __OUT_ABC, 2, __constVal0, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+3	6026	77	#line 6026 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	7	77	#line 7 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	7	77	#line 7 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	8	77		set __D0reverse, 50
+3	8	80	#line 8 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	9	80	#pragma macro 7
+3	9	80		setout __constVal2, 2, __D0reverse, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+3	6033	103	#line 6033 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	8	103	#line 8 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	9	103	#line 9 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	10	103	#pragma macro 7
+3	10	103		setout __constVal2, 2, __constVal0, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+3	6036	126	#line 6036 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	9	126	#line 9 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	9	126	#line 9 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	10	126		set __D0reverse, 45
+3	10	129	#line 10 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	11	129	#pragma macro 10
+3	11	129		acquire __OnRevMutex
+3	11	130		neg __OnRev_Tmp, __D0reverse
+3	11	133		setout __constVal1, 2, __OnRev_Tmp, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+3	11	156		release __OnRevMutex
+3	6043	157	#line 6043 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	10	157	#line 10 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+3	11	157		exit -1, -1
+4	14	0	#line 14 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	15	0		set __SetSensorTouch_7qG2_port_7qG2_000_inline_explore, 0
+4	14	3	#line 14 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	3718	3	#line 3718 "NXCDefs.h"
+4	3719	3	#pragma macro 6
+4	3719	3		setin __constVal1, __SetSensorTouch_7qG2_port_7qG2_000_inline_explore, 0
+4	3719	7		setin __constVal32, __SetSensorTouch_7qG2_port_7qG2_000_inline_explore, 1
+4	3719	11		acquire __ResetSensorMutex
+4	3719	12		mov __ResetSensorPort, __SetSensorTouch_7qG2_port_7qG2_000_inline_explore
+4	3719	14		subcall __ResetSensorSubroutine, ____ResetSensorSubroutine_return
+4	3719	16		release __ResetSensorMutex
+4	6059	17	#line 6059 "NXCDefs.h"
+4	3718	17	#line 3718 "NXCDefs.h"
+4	15	17	#line 15 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	15	17	#line 15 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	16	17		set __SetSensorLowspeed_7qG2_port_7qG2_000_inline_explore, 1
+4	15	20	#line 15 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	16	20	#line 16 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	17	20		mov __SetSensorLowspeed_7qG2_bIsPowered_7qG2_000_inline_explore, __constVal1
+4	3758	22	#line 3758 "NXCDefs.h"
+4	3759	22		mov __SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_explore, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_explore
+4	3758	24	#line 3758 "NXCDefs.h"
+4	3758	24	#line 3758 "NXCDefs.h"
+4	3759	24		mov __DU0SetSensorLowspeed_inline_explore, __SetSensorLowspeed_7qG2_bIsPowered_7qG2_000_inline_explore
+4	3758	26	#line 3758 "NXCDefs.h"
+4	3759	26		tst 5, __zfSetSensorLowspeed_inline_explore, __DU0SetSensorLowspeed_inline_explore
+4	3758	29	#line 3758 "NXCDefs.h"
+4	3759	29		brtst 4, __004__NXC_Label_36, __zfSetSensorLowspeed_inline_explore
+4	3758	32	#line 3758 "NXCDefs.h"
+4	3759	32		set __D0SetSensorLowspeed_inline_explore, 11
+4	3758	35	#line 3758 "NXCDefs.h"
+4	3759	35		jmp __004__NXC_Label_37
+4	3758	37	#line 3758 "NXCDefs.h"
+4	3759	37		set __D0SetSensorLowspeed_inline_explore, 10
+4	3758	40	#line 3758 "NXCDefs.h"
+4	3759	40		mov __SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLowspeed_inline_explore, __D0SetSensorLowspeed_inline_explore
+4	3663	42	#line 3663 "NXCDefs.h"
+4	3664	42		setin __SetSensorType_7qG2_type_7qG2_000_inline_SetSensorLowspeed_inline_explore, __SetSensorType_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_explore, 0
+4	3663	46	#line 3663 "NXCDefs.h"
+4	3759	46	#line 3759 "NXCDefs.h"
+4	3759	46	#line 3759 "NXCDefs.h"
+4	3760	46		mov __SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_explore, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_explore
+4	3759	48	#line 3759 "NXCDefs.h"
+4	3759	48	#line 3759 "NXCDefs.h"
+4	3760	48		set __SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLowspeed_inline_explore, 0
+4	3759	51	#line 3759 "NXCDefs.h"
+4	3676	51	#line 3676 "NXCDefs.h"
+4	3677	51		setin __SetSensorMode_7qG2_mode_7qG2_000_inline_SetSensorLowspeed_inline_explore, __SetSensorMode_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_explore, 1
+4	3676	55	#line 3676 "NXCDefs.h"
+4	3760	55	#line 3760 "NXCDefs.h"
+4	3760	55	#line 3760 "NXCDefs.h"
+4	3761	55		mov __ResetSensor_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_explore, __SetSensorLowspeed_7qG2_port_7qG2_000_inline_explore
+4	3760	57	#line 3760 "NXCDefs.h"
+4	3694	57	#line 3694 "NXCDefs.h"
+4	3695	57	#pragma macro 4
+4	3695	57		acquire __ResetSensorMutex
+4	3695	58		mov __ResetSensorPort, __ResetSensor_7qG2_port_7qG2_000_inline_SetSensorLowspeed_inline_explore
+4	3695	60		subcall __ResetSensorSubroutine, ____ResetSensorSubroutine_return
+4	3695	62		release __ResetSensorMutex
+4	6153	63	#line 6153 "NXCDefs.h"
+4	3694	63	#line 3694 "NXCDefs.h"
+4	3761	63	#line 3761 "NXCDefs.h"
+4	16	63	#line 16 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	17	63	#line 17 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	18	63		set __D0explore, 1
+4	18	66	#line 18 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	19	66		tst 5, __zfexplore, __D0explore
+4	18	69	#line 18 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	19	69		brtst 4, __NXC_Label_615, __zfexplore
+4	18	72	#line 18 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	19	72		set __D0explore, 75
+4	19	75	#line 19 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	20	75	#pragma macro 7
+4	20	75		setout __OUT_ABC, 2, __D0explore, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+4	6171	98	#line 6171 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	19	98	#line 19 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	19	98	#line 19 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	20	98	#pragma macro 26
+4	20	98		acquire __RLSBmutex1
+4	20	99		mov __RLSReadBuf1, __RLSBbufLSWrite1
+4	20	101		set __RLSBytesCount1, 1
+4	20	104		wait 15
+4	20	106		subcall __ReadLSBytes1, ____ReadLSBytes1_return
+4	20	108		index __D0explore, __RLSReadBuf1, 65535
+4	20	112		release __RLSBmutex1
+4	6174	113	#line 6174 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	19	113	#line 19 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	20	113		mov __signed_stack_001explore, __D0explore
+4	20	115	#line 20 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	21	115		set __D0explore, 12
+4	20	118	#line 20 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	21	118		cmp 0, __zfexplore, __signed_stack_001explore, __D0explore
+4	20	122	#line 20 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	21	122		mov __D0explore, __zfexplore
+4	21	124	#line 21 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	22	124	#line 22 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	22	124	#line 22 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	23	124	#line 23 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	23	124	#line 23 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	24	124		getin __signed_stack_001explore, __constVal0, 4
+4	23	128	#line 23 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	24	128	#line 24 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	25	128		set __D0explore, 1
+4	24	131	#line 24 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	25	131		cmp 4, __zfexplore, __signed_stack_001explore, __D0explore
+4	24	135	#line 24 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	25	135		mov __D0explore, __zfexplore
+4	25	137	#line 25 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	26	137	#line 26 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	26	137	#line 26 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	29	137	#line 29 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	31	137	#line 31 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	32	137		jmp __NXC_Label_614
+4	31	139	#line 31 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+4	32	139		exit 0, 0
+5	37	0	#line 37 "C:\Users\HP\AppData\Local\Temp\temp.nxc"
+5	38	0		subret ____initialize_global_data_return
+#CLUMPS
+Clump	Name	Offset	File
+0	main	0	C:\Users\HP\AppData\Local\Temp\temp.nxc
+1	__ResetSensorSubroutine	5	NXTDefs.h
+2	__ReadLSBytes1	18	NXTDefs.h
+3	reverse	102	C:\Users\HP\AppData\Local\Temp\temp.nxc
+4	explore	262	C:\Users\HP\AppData\Local\Temp\temp.nxc
+5	__initialize_global_data	404	C:\Users\HP\AppData\Local\Temp\temp.nxc

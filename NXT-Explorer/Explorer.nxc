@@ -1,0 +1,35 @@
+#define MAX_PROXIMITY 12
+
+task reverse()
+{
+ Off(OUT_ABC);
+ OnRev(OUT_ABC, 50);
+ Off(OUT_ABC);
+ OnFwd(OUT_C, 50);
+ Off(OUT_C);
+ OnRev(OUT_B, 45);
+}
+
+task explore()
+{
+  SetSensorTouch(IN_1);
+  SetSensorLowspeed(IN_2);
+  while(true)
+  {
+    OnFwd(OUT_ABC, 75);
+    if(SensorUS(IN_2) < MAX_PROXIMITY)
+    {
+     Precedes(reverse);
+    }
+    if(SENSOR_1 == 1)
+      {
+       Precedes(reverse);
+      }
+  }
+
+}
+
+task main()
+{
+  Precedes(reverse, explore);
+}
