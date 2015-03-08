@@ -1,7 +1,7 @@
 # nxt-nxc
 Programs for the LEGO Mindstorms NXT 2.0 Kit written in NXC
 
-![alt text] (https://shravanj.com/files/nxt/nxt.jpg)
+![alt text] (https://shravanj.com/files/nxt/nxt.JPG)
 
 # What even is this?
 These are a few programs written in Not eXactly C, a high level C based language that can be used to program the LEGO Mindstorms NXT 2.0 brick without any firmware alterations. Most of the programs are a work in progress, please do not expect them to be perfect.
