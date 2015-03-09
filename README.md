@@ -11,3 +11,6 @@ Install the Fantom USB driver (included with the Mindstorms software), install B
 
 #For more info on the Bricx CC project
 Visit http://bricxcc.sourceforge.net/
+
+#Pro tip
+I really do not like the editor found in the Bricx CC IDE. Instead you should use Sublime Text or Atom and set the syntax highlighting to C. Then just save the file, open it up in Bricx CC, and compile and run. 
